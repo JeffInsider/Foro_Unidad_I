@@ -10,8 +10,11 @@ interface Props {
 export const InputGame = ({ initGame, gameOver }: Props) => {
     const [value, setValue] = useState('');
 
+    //este metodo se encarga de manejar la lógica de agregar un nuevo juego
     const handleAdd = () => {
+        //game es el valor ingresado por el usuario y 10 es la base del sistema numérico
         const game = parseInt(value, 10);
+        //isNaN es una función que devuelve true si el valor es NaN (Not a Number)
         if (!isNaN(game)) {
             initGame(game);
             setValue('');
